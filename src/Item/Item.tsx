@@ -14,7 +14,6 @@ const Item: React.FC<Props> = ({ item, handleAddToCart, removeFromCart, addToCar
     const [quantity, setQuantity] = useState(0);
 
     return (
-
         <Wrapper>
             <div className="product-image">
                 <img className="actual-image" src={item.image} alt={item.title} />
@@ -33,7 +32,7 @@ const Item: React.FC<Props> = ({ item, handleAddToCart, removeFromCart, addToCar
                     }}><b>-</b></Button>
 
                 <p><b>{quantity}</b></p>
-                
+
                 <Button className="quantity-buttons" size="small"
                     disableElevation variant="contained"
                     onClick={() => {
@@ -41,7 +40,10 @@ const Item: React.FC<Props> = ({ item, handleAddToCart, removeFromCart, addToCar
                         setQuantity(quantity + 1)
                     }}><b>+</b></Button>
             </div>
-            <Button className="add-to-cart" onClick={() => handleAddToCart(item)}>Add to Cart</Button>
+            <Button className="add-to-cart" onClick={() => {
+                handleAddToCart(item)
+                setQuantity(quantity + 1)
+            }}>Add to Cart</Button>
         </Wrapper>
     );
 }

@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
 
     Button {
         color: black;
-        padding: 0.5rem 1rem;
+        padding: 0.8rem;
         background-color: #c89ce4;
         border: 3px aliceblue solid;
         transition: background-color 0.5s ease, border-color 0.5s ease;
