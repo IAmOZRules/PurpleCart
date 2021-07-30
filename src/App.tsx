@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { useQuery } from 'react-query';
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import { Drawer, LinearProgress, Badge, Grid } from "@material-ui/core";
+import { Drawer, LinearProgress, Grid } from "@material-ui/core";
 
 // Components
-import { CartItemType, getProducts } from "./API";
 import Item from "./Item/Item";
 import Cart from "./Cart/Cart";
+import Header from "./Header/Header";
+import { CartItemType, getProducts } from "./API";
 
 // Styles
-import { Wrapper, StyledButton } from "./App.styles";
+import { Wrapper } from "./App.styles";
 
 const App = () => {
     const [cartOpen, setCartOpen] = useState(false);
@@ -43,7 +43,7 @@ const App = () => {
             prev.reduce((ack, item) => {
                 if (item.id === id) {
                     if (item.amount === 1) return ack;
-                    return [...ack, { ...item, amount: item.amount - 1}];
+                    return [...ack, { ...item, amount: item.amount - 1 }];
                 } else {
                     return [...ack, item];
                 }
@@ -55,23 +55,22 @@ const App = () => {
     if (error) return <div>Something went wrong 😥. Please try again in a little while...</div>;
 
     return (
-        <Wrapper>
-            <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
-                <Cart cartItems={cartItems} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} />
-            </Drawer>
-            <StyledButton onClick={() => setCartOpen(true)}>
-                <Badge badgeContent={getTotalItems(cartItems)} color='error'>
-                    <AddShoppingCartIcon />
-                </Badge>
-            </StyledButton>
-            <Grid container direction="row" justifyContent="center" spacing={3}>
-                {data?.map(item => (
-                    <Grid item key={item.id} xs={12} sm={4}>
-                        <Item item={item} handleAddToCart={handleAddToCart} ></Item>
-                    </Grid>
-                ))}
-            </Grid>
-        </Wrapper>
+        <div className="">
+            <Header setCartOpen={setCartOpen} getTotalItems={getTotalItems} cartItems={cartItems}/>
+            <Wrapper>
+                <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
+                    <Cart cartItems={cartItems} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} setCartOpen={setCartOpen}/>
+                </Drawer>
+                <h1>All Items</h1>
+                <Grid container direction="row" justifyContent="center" spacing={3}>
+                    {data?.map(item => (
+                        <Grid item key={item.id} xs={12} sm={4}>
+                            <Item item={item} handleAddToCart={handleAddToCart} ></Item>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Wrapper>
+        </div>
     );
 }
 

@@ -1,22 +1,34 @@
 import { CartItemType } from "../API";
-import { Wrapper } from "./Cart.styles";
 import CartItem from "../CartItem/CartItem";
+import { Wrapper } from "./Cart.styles";
+import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
+import { Button } from '@material-ui/core';
 
 type Props = {
     cartItems: CartItemType[];
     addToCart: (clickedItem: CartItemType) => void;
     removeFromCart: (id: number) => void;
+    setCartOpen: any;
 };
 
-const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
+const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart, setCartOpen }) => {
 
     const calculateTotal = (items: CartItemType[]) =>
         items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
 
     return (
         <Wrapper>
-            <h2>Shopping Cart</h2>
-            {cartItems.length === 0 ? <h3>No Items in to Show in Cart!</h3> : null}
+            <div className="cart-header">
+                <div>
+                    <Button size="small" disableElevation variant="contained" onClick={() => setCartOpen(false)}>
+                        <ArrowForwardIosRoundedIcon />
+                    </Button>
+                </div>
+                <div className="cart-heading">
+                    <h2>Shopping Cart</h2>
+                </div>
+            </div>
+            {cartItems.length === 0 ? <h3>No Items to Show in Cart!</h3> : null}
             {cartItems.map(item => (
                 <CartItem key={item.id} item={item} addToCart={addToCart} removeFromCart={removeFromCart} />
             ))}

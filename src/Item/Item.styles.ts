@@ -12,17 +12,25 @@ export const Wrapper = styled.div`
 
     button {
         border-radius: 0 0 20px 20px;
-        background-color: lightgray;
+        background-color: #9452a5;
+        color: white;
+        transition: color 0.3s ease, background-color 0.3s ease;
     }
 
-    /* .product-image {
-        height: 50%;
+    button:hover {
+        background-color: #c89ce4;
+        color: black;
     }
-     */
+
+    .product-image {
+        display: flex;
+        justify-content: center;
+    }
+
     .actual-image {
         display: flexbox;
         margin: auto;
-        height: 200px;
+        width: 50%;
         object-fit: cover;
         border-radius: 20px 20px 0 0;
         transition: width 0.3s, height 0.3s;

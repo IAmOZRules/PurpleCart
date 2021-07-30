@@ -1,18 +1,25 @@
 import styled from "styled-components";
+import { IconButton } from "@material-ui/core";
 
 export const Wrapper = styled.div`
+    background-color: lightgrey;
     font-family: Arial, Helvetica, sans-serif;
     width: 500px;
     padding: 30px;
     margin-bottom: 0;
     padding-top: 0px;
 
-    h2 {
-        text-align: center;
-        font-size: 2rem;
+    .cart-heading {
+        display: inline-flex;
+        font-size: 1.5rem;
         letter-spacing: 1.5px;
-        padding-bottom: 1rem;
-        border-bottom: 3px lightblue solid;
+    }
+    
+    .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px #451e5d solid;
     }
 
     h3 {
@@ -24,16 +31,44 @@ export const Wrapper = styled.div`
         justify-content: center;
         align-items: center;
         margin: auto;
+        font-size: 20px;
     }
 
     .total-dollar {
         margin-left: 0.5rem;
         font-size: 1.6rem;
-        color: darkgreen;
+        color: #72286f;
     }
 
     .total-value {
         font-size: 1.5rem;
         color: green;
+    }
+
+    Button {
+        background-color: #9452a5;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        color: white;
+        padding: 10px;
+    }
+
+    Button:hover {
+        background-color: #c89ce4;
+        color: black;
+    }
+
+    @media only screen and (max-width: 640px) {
+        width: 90%;
+    }
+`
+
+export const StyledButton = styled(IconButton)`
+    background-color: #9452a5;
+    transition: background-color 0.5s ease;
+    color: white;
+    border: 2px black solid;
+
+    :hover {
+        background-color: #c89ce4;
     }
 `
