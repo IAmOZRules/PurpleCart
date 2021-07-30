@@ -24,6 +24,7 @@ export const Wrapper = styled.div`
 
     h3 {
         text-align: center;
+        margin-top: 2.8rem;
     }
 
     .cart-total {
@@ -50,6 +51,7 @@ export const Wrapper = styled.div`
         transition: background-color 0.5s ease, color 0.5s ease;
         color: white;
         padding: 10px;
+        border: 2px solid #451e5d;
     }
 
     Button:hover {

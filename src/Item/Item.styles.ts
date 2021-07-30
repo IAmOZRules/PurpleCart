@@ -9,15 +9,33 @@ export const Wrapper = styled.div`
     border-radius: 20px;
     height: 100%;
 
-
-    button {
+    
+    .add-to-cart {
         border-radius: 0 0 20px 20px;
         background-color: #9452a5;
         color: white;
         transition: color 0.3s ease, background-color 0.3s ease;
     }
+    
+    .add-to-cart:hover {
+        background-color: #c89ce4;
+        color: black;
+    }
+    
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 
-    button:hover {
+    .quantity-buttons {
+        height: 3rem;
+        background-color: #9452a5;
+        color: white;
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .quantity-buttons:hover {
         background-color: #c89ce4;
         color: black;
     }

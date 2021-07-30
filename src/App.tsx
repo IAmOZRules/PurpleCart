@@ -65,7 +65,7 @@ const App = () => {
                 <Grid container direction="row" justifyContent="center" spacing={3}>
                     {data?.map(item => (
                         <Grid item key={item.id} xs={12} sm={4}>
-                            <Item item={item} handleAddToCart={handleAddToCart} ></Item>
+                            <Item item={item} handleAddToCart={handleAddToCart} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} ></Item>
                         </Grid>
                     ))}
                 </Grid>
