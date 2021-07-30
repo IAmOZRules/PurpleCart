@@ -16,7 +16,7 @@ const Header: React.FC<Props> = ({ setCartOpen, getTotalItems, cartItems }) => {
                 <AppBar style={{ backgroundColor: "#451e5d", padding: '10px 3rem' }}>
                     <Toolbar>
                         <Typography >
-                            <Link className="heading" href="/">Shop</Link>
+                            <Link className="heading" href="/">PurpleCart</Link>
                         </Typography>
                         <StyledButton onClick={() => setCartOpen(true)}>
                             <Badge badgeContent={getTotalItems(cartItems)} color='error'>
