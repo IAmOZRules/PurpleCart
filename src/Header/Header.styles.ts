@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     font-family: Arial, Helvetica, sans-serif;
+    
+    .head-appbar{
+        background-color: #451e5d;
+        padding: 10px 0;
+    }
 
     .heading {
         font-size: 2rem;
@@ -26,5 +31,11 @@ export const Wrapper = styled.div`
     Button:hover {
         border-color: lightblue; 
         background-color: white;
+    }
+
+    @media only screen and (max-width: 640px) {
+        Button {
+            right: 1.4rem;
+        }
     }
 `

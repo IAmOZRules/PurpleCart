@@ -13,7 +13,7 @@ const Header: React.FC<Props> = ({ setCartOpen, getTotalItems, cartItems }) => {
     return (
         <header>
             <Wrapper>
-                <AppBar style={{ backgroundColor: "#451e5d", padding: '10px 0' }}>
+                <AppBar className="head-appbar">
                     <Toolbar>
                         <Typography >
                             <Link className="heading" href="/">PurpleCart</Link>
