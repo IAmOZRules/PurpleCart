@@ -60,6 +60,11 @@ export const Wrapper = styled.div`
 
     @media only screen and (max-width: 640px) {
         width: 80%;
+
+        .cart-heading {
+            display: inline-flex;
+            font-size: 1.2rem;
+        }
     }
 `
 

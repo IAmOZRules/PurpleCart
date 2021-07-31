@@ -10,6 +10,13 @@ export const Wrapper = styled.div`
     h1 {
         text-align: center;
         margin-bottom: 2rem;
-        letter-spacing: 1.8spx;
+        letter-spacing: 1.8px;
+    }
+
+    @media only screen and (max-width: 640px) {
+        margin: 1rem;
+        margin-top: 7rem;
+        margin-bottom: 7rem;
+
     }
 `
