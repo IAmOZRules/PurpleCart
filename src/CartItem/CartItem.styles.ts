@@ -23,12 +23,13 @@ export const Wrapper = styled.div`
     }
 
     img {
-        width: 150px;
+        width: 30%;
         object-fit: cover;
-        margin-left: 40px;
+        margin-left: 30px;
     }
 
     Button {
+        padding: 0;
         background-color: #9452a5;
         color: white;
         transition: color 0.3s ease, background-color 0.3s ease;
@@ -37,5 +38,9 @@ export const Wrapper = styled.div`
     Button:hover {
         background-color: #c89ce4;
         color: black;
+    }
+
+    .amount {
+        padding: 0 1rem;
     }
 `
