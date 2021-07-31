@@ -13,12 +13,9 @@ export const Wrapper = styled.div`
         text-decoration: none;
     }
 
-    .cart-button {
+    Button {
         position: fixed;
         right: 4.5rem;
-    }
-
-    Button {
         color: black;
         padding: 0.8rem;
         background-color: #c89ce4;
@@ -29,12 +26,5 @@ export const Wrapper = styled.div`
     Button:hover {
         border-color: lightblue; 
         background-color: white;
-    }
-
-    .CART {
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bolder;
-        padding-right: 0.7rem;
-        font-size: 1.2rem;
     }
 `

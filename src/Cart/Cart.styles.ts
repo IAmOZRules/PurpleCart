@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { IconButton } from "@material-ui/core";
 
 export const Wrapper = styled.div`
-    background-color: lightgrey;
     font-family: Arial, Helvetica, sans-serif;
     width: 500px;
     padding: 30px;
@@ -60,7 +59,7 @@ export const Wrapper = styled.div`
     }
 
     @media only screen and (max-width: 640px) {
-        width: 90%;
+        width: 80%;
     }
 `
 

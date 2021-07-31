@@ -26,6 +26,11 @@ export const Wrapper = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        height: 3rem;
+    }
+
+    .quantity {
+        width: 40%;
     }
 
     .quantity-buttons {

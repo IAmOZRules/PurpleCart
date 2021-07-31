@@ -30,9 +30,7 @@ const Item: React.FC<Props> = ({ item, handleAddToCart, removeFromCart, addToCar
                         removeFromCart(item.id)
                         if (quantity > 0) setQuantity(quantity - 1)
                     }}><b>-</b></Button>
-
                 <p><b>{quantity}</b></p>
-
                 <Button className="quantity-buttons" size="small"
                     disableElevation variant="contained"
                     onClick={() => {

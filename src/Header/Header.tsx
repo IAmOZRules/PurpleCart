@@ -18,15 +18,12 @@ const Header: React.FC<Props> = ({ setCartOpen, getTotalItems, cartItems }) => {
                         <Typography >
                             <Link className="heading" href="/">PurpleCart</Link>
                         </Typography>
-                        <div className="cart-button">
-                            <Button size="large"
-                                disableElevation variant="contained" onClick={() => setCartOpen(true)}>
-                                <Typography className="CART">CART</Typography>
-                                <Badge badgeContent={getTotalItems(cartItems)} color='error'>
-                                    <AddShoppingCartIcon fontSize="large" />
-                                </Badge>
-                            </Button>
-                        </div>
+                        <Button size="large"
+                            disableElevation variant="contained" onClick={() => setCartOpen(true)}>
+                            <Badge badgeContent={getTotalItems(cartItems)} color='error'>
+                                <AddShoppingCartIcon fontSize="large" />
+                            </Badge>
+                        </Button>
                     </Toolbar>
                 </AppBar>
             </Wrapper>
